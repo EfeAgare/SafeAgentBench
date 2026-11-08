@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "safeagentbench"
+version = "0.1.0"
+description = "A synthetic benchmark for testing authorization boundaries in payment-capable AI agents."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "SafeAgentBench contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0"]
+
+[project.scripts]
+safeagentbench = "safeagentbench.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/safeagentbench"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
