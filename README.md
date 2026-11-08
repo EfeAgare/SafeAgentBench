@@ -115,12 +115,20 @@ policy decision, tool result, attempted sensitive call, and resulting simulated
 state. The current suite establishes implementation behavior, not empirical
 research findings about any LLM.
 
-### Day 5 next: evaluation metrics
+## Days 5–7: evaluation, coverage, and reporting
 
-Day 5 should add an evaluator over a larger scenario set. Planned metrics are:
-attack-attempt rate, unauthorized-execution rate, legitimate-task success rate,
-false-block rate, guard-specific denial counts, and idempotency replay rate.
-Reports should include raw numerator/denominator counts and scenario IDs, keep
-benign and adversarial cases separate, and avoid drawing conclusions until
-actual experiments have been run.
+Day 5 adds deterministic aggregate metrics with raw counts, denominators,
+denial-code breakdowns, and scenario IDs. Day 6 expands the adversarial matrix
+across ownership, permission, intent, and state boundaries. Day 7 composes the
+loader, runner, and evaluator into a stable, schema-versioned JSON report.
+
+```bash
+cd python
+python -m pytest -q
+python -m safeagentbench.benchmark scenarios/day3_prompt_injection.json scenarios/day6_guard_matrix.json
+```
+
+See [`DAY_5.md`](DAY_5.md), [`DAY_6.md`](DAY_6.md), and
+[`DAY_7.md`](DAY_7.md) for the code maps and methodology. No checked-in report
+is labeled as a research finding: results describe deterministic mocks only.
 

@@ -11,6 +11,13 @@ from .attacks import AttackResult, InjectionFollowingMockModel, run_attack
 from .scenarios import InjectionScenario, load_scenarios
 from .evaluator import EvaluationReport, evaluate
 
+
+def run_benchmark(paths):  # type: ignore[no-untyped-def]
+    """Load the Day 7 runner lazily so ``python -m`` has no import warning."""
+    from .benchmark import run_benchmark as execute
+
+    return execute(paths)
+
 __all__ = [
     "Action",
     "Authorization",
@@ -35,5 +42,6 @@ __all__ = [
     "run_attack",
     "EvaluationReport",
     "evaluate",
+    "run_benchmark",
 ]
 

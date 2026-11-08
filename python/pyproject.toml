@@ -17,6 +17,7 @@ dev = ["pytest>=8.0", "pytest-cov>=5.0"]
 
 [project.scripts]
 safeagentbench = "safeagentbench.cli:main"
+safeagentbench-benchmark = "safeagentbench.benchmark:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/safeagentbench"]

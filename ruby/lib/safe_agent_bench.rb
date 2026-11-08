@@ -7,4 +7,5 @@ require_relative "safe_agent_bench/agent"
 require_relative "safe_agent_bench/scenarios"
 require_relative "safe_agent_bench/attacks"
 require_relative "safe_agent_bench/evaluator"
+require_relative "safe_agent_bench/benchmark"
 
