@@ -9,6 +9,7 @@ from .mock_model import OfflineMockModel
 from .tools import SyntheticTransaction, TransactionTools
 from .attacks import AttackResult, InjectionFollowingMockModel, run_attack
 from .scenarios import InjectionScenario, load_scenarios
+from .evaluator import EvaluationReport, evaluate
 
 __all__ = [
     "Action",
@@ -32,5 +33,7 @@ __all__ = [
     "InjectionScenario",
     "load_scenarios",
     "run_attack",
+    "EvaluationReport",
+    "evaluate",
 ]
 
